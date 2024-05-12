@@ -12,7 +12,7 @@ class LineTracking():
         self.mean_centroids = [0, 0]
 
     def processing(self):
-        #"""MÃ©thode permettant le traitement d'image"""
+        #"""Méthode permettant le traitement d'image"""
         while True:
             ret, frame = self.video.read()
             if not ret:
@@ -56,5 +56,5 @@ class LineTracking():
         cv2.destroyAllWindows()
 
 if __name__ == '__main__':
-    test = LineTracking('2_ip.mp4')  # Replace 'video.mp4' with your video file path
+    test = LineTracking('2_ip.mp4')  # Replace '2_ip.mp4' with your video file path
     test.processing()

@@ -9,12 +9,9 @@ import matplotlib.pyplot as plt
 
 	
 class LineTracking():
-    """
-    Classe permettant le traitement d'image, la délimitation d'un contour et permet de trouver le centre de la
-    forme detectée
-    """
+    #""" Classe permettant le traitement d'image, la délimitation d'un contour et permet de trouver le centre de la forme detectée """
     def __init__(self,img_file):
-        """The constructor."""
+       # """The constructor."""
         self.img = cv2.imread(img_file)
         self.img_inter = self.img
         self.img_final = self.img
@@ -31,7 +28,7 @@ class LineTracking():
         ret,thresh = cv2.threshold(blur,60,255,cv2.THRESH_BINARY_INV) #on binarise l'image
 
         self.img_inter=thresh
-        """Une ouverture permet d'enlever tous les Ã©lements qui sont plus petits que l'élement structurant (ou motif)
+        #"""Une ouverture permet d'enlever tous les Ã©lements qui sont plus petits que l'élement structurant (ou motif)
         Une fermeture permet de "combler" les trous qui ont une taille inférieur Ã  l'élement structurant """
         kernel_open = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(5,5)) #on crée l'élement structurant de l'ouverture
         kernel_close = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(10,10)) #on crée l'élement structurant de la fermeture
@@ -48,10 +45,8 @@ class LineTracking():
         self.centroids = output[3] #donne les centres de la ou des formes de l'image
 
         for c in self.centroids :
-            """Permet de faire la moyenne des centres de la forme, en effet sur l'image test,
-               il y a deux centres qui sont très proches et la moyenne de deux convient.
-               On pourra imaginer que dans un cas général on modifie cela
-            """
+           # """Permet de faire la moyenne des centres de la forme, en effet sur l'image test, il y a deux centres qui sont très proches et la moyenne de deux convient. On pourra imaginer que dans un cas général on modifie cela
+            
             self.mean_centroids[0] += c[0]/len(self.centroids)
             self.mean_centroids[1] += c[1]/len(self.centroids)
 
@@ -73,3 +68,4 @@ if __name__ == '__main__' :
             break
     cv2.destroyAllWindows()
 
+# enjoy :)

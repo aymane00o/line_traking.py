@@ -19,7 +19,7 @@ class LineTracking():
         self.mean_centroids = [0,0]
 
     def processing(self):
-        """Méthode permettant le traitement d'image"""
+        #"""Méthode permettant le traitement d'image"""
         #self.img=cv2.resize(self.img,(int(self.img.shape[1]*0.2),int(self.img.shape[0]*0.2))) #redimensionner l'image d'origine
         print(self.img.shape)
         #self.img = self.img[199:391, 149:505] #on recentre l'image en excluant les zones extérieures afin d'avoir une plus grande précision pour la suite
